@@ -19,3 +19,12 @@ margin:20px auto;
 max-width:960px;
 text-align:center;
 `;
+
+export const Input = styled.input`
+    border:1px solid #ddd;
+    height:34px;
+    margin:5px;
+    &:focus-visible{
+        outline:none;
+    }
+`;

@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import useCourseStore from "@store/courseStore";
-import {Button, Wrapper} from './styles/style';
+import {Button, Wrapper, Input} from './styles/style';
 
 
 
@@ -27,12 +27,12 @@ const CourseForm = () =>{
         <>
             <Wrapper>
             <h3>Add Course</h3>
-                <input
+                <Input
                     value={courseTitle}
-                    onChange={(e)=>{
+                    onChange={(e:any)=>{
                         setCourseTitle(e.target.value);
                     }}
-                ></input>
+                ></Input>
                 <Button
                 onClick={() =>{
                     handleCourseSubmit()

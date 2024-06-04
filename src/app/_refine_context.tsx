@@ -133,10 +133,6 @@ const App = (props: React.PropsWithChildren<AppProps>) => {
                   list: "/tags",                  
                 },
                 {
-                  name: "style",
-                  list: "/style",                  
-                },
-                {
                   name: "zustand",
                   list: "/zustand",                  
                 },
