@@ -56,6 +56,7 @@ export default function BlogPostList() {
     ?
     <>
     <TableContainer>
+      <h2>Tanstack Table with Style</h2>
       <StyledTable>
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
