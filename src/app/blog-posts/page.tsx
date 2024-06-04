@@ -16,7 +16,7 @@ export default function BlogPostList() {
   const { tableProps } = useTable({
     syncWithLocation: true,
   });
-
+// console.log(tableProps);
   const { data: categoryData, isLoading: categoryIsLoading } = useMany({
     resource: "categories",
     ids:
@@ -27,7 +27,7 @@ export default function BlogPostList() {
       enabled: !!tableProps?.dataSource,
     },
   });
-
+  // console.log(tableProps);
   return (
     <List>
       <Table {...tableProps} rowKey="id">

@@ -6,6 +6,9 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { SessionProvider, signIn, signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ZustandState from '../app/zustand/page';
+import StyleCompo from '../app/style/page';
 
 import routerProvider from "@refinedev/nextjs-router";
 
@@ -108,6 +111,7 @@ const App = (props: React.PropsWithChildren<AppProps>) => {
       <RefineKbarProvider>
         <AntdRegistry>
           <ColorModeContextProvider defaultMode={defaultMode}>
+          <BrowserRouter>
             <Refine
               routerProvider={routerProvider}
               dataProvider={dataProvider}
@@ -125,14 +129,16 @@ const App = (props: React.PropsWithChildren<AppProps>) => {
                   },
                 },
                 {
-                  name: "categories",
-                  list: "/categories",
-                  create: "/categories/create",
-                  edit: "/categories/edit/:id",
-                  show: "/categories/show/:id",
-                  meta: {
-                    canDelete: true,
-                  },
+                  name: "tags",
+                  list: "/tags",                  
+                },
+                {
+                  name: "style",
+                  list: "/style",                  
+                },
+                {
+                  name: "zustand",
+                  list: "/zustand",                  
                 },
               ]}
               options={{
@@ -141,9 +147,11 @@ const App = (props: React.PropsWithChildren<AppProps>) => {
                 useNewQueryKeys: true,
               }}
             >
+                
               {props.children}
               <RefineKbar />
             </Refine>
+            </BrowserRouter>
           </ColorModeContextProvider>
         </AntdRegistry>
       </RefineKbarProvider>
