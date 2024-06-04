@@ -10,44 +10,41 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
+type BlogTable = {
+  id: number
+  title: string
+}
+
 
 export default function BlogPostList() {
-  const { tableProps } = useTable({
-    syncWithLocation: true,
-  });
 
-  // console.log(tableProps);
-  
+const { tableProps, tableQueryResult } = useTable({
+  syncWithLocation: true,
+});
 
-  type BlogTable = {
-    id: number
-    title: string
-  }
 
-  const columnHelper = createColumnHelper<BlogTable>();
 
-  const columns = [
-    columnHelper.accessor('id', {
-      header: 'ID',
-    }),
-    columnHelper.accessor('title', {
-      header: 'Title',
-    }),
-    
-    
-  ]
 
-  
+const columnHelper = createColumnHelper<BlogTable>();
 
-  // console.log(tableProps); 
+const columns = [
+  columnHelper.accessor('id', {
+    header: 'ID',
+  }),
+  columnHelper.accessor('title', {
+    header: 'Title',
+  }),
+]
 
-  
+const data = tableProps.dataSource;
+
+
   const table = useReactTable({
-    data: tableProps.dataSource,
+    data: data as BlogTable[],
     columns,
     getCoreRowModel: getCoreRowModel(),
+  });
 
-  })
 
 
 
