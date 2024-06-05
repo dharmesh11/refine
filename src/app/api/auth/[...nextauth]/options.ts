@@ -5,8 +5,8 @@ const authOptions = {
   providers: [
     // !!! Should be stored in .env file.
     GoogleProvider({
-      clientId: `1041339102270-e1fpe2b6v6u1didfndh7jkjmpcashs4f.apps.googleusercontent.com`,
-      clientSecret: `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`,
+      clientId: `1005934280026-vj9i0poknloj1bg9bd4udvn380nm776b.apps.googleusercontent.com`,
+      clientSecret: `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`,
     }),
   ],
   secret: `UItTuD1HcGXIj8ZfHUswhYdNd40Lc325R8VlxQPUoR0=`,
